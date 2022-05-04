@@ -126,7 +126,7 @@ def command(cmd: str):
                 t21.join()
                 return
             else:
-                if filename != "":
+                if filename != "" and download_url != "null":
                     download(download_url, filename + ".mp3")
                     t1 = threading.Thread(target=play_mp3, args=(filename + ".mp3",))
                     print(filename + ".mp3", "没有找到文件 开始下载播放")
@@ -226,8 +226,6 @@ while True:
         str_tm0p = str_tm0p.replace("）", "####")
         str_tm0p = str_tm0p.replace("（", "####")
         import hashlib
-
-
 
         temp_str_att = str_tm0p + temp_str_att
         if len(str_tm0p.split("####")) == 3:
